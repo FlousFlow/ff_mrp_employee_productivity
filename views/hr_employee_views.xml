@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hr_employee_form_view_employee_productivity" model="ir.ui.view">
+        <field name="name">hr.employee.form.employee.productivity</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button name="action_open_employee_production" type="object"
+                        class="oe_stat_button" icon="fa-industry"
+                        groups="mrp.group_mrp_user,hr.group_hr_user">
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_value"><field name="employee_production_count"/></span>
+                        <span class="o_stat_text">Production</span>
+                    </div>
+                </button>
+                <button name="action_print_employee_production_statement" type="object"
+                        class="oe_stat_button" icon="fa-print"
+                        groups="mrp.group_mrp_user,hr.group_hr_user"
+                        string="Print Production Statement"/>
+            </div>
+            <xpath expr="//page[@name='hr_settings']//group" position="inside">
+                <field name="production_hourly_cost"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_employee_production_statement_from_employees" model="ir.actions.server">
+        <field name="name">Print Employee Production Statements</field>
+        <field name="model_id" ref="hr.model_hr_employee"/>
+        <field name="binding_model_id" ref="hr.model_hr_employee"/>
+        <field name="binding_type">action</field>
+        <field name="state">code</field>
+        <field name="code">action = records.action_print_employee_production_statement()</field>
+    </record>
+</odoo>

@@ -1,0 +1,592 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ff_mrp_employee_productivity
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ff_mrp_employee_productivity 19.0\n"
+"PO-Revision-Date: 2026-11-20 00:00+0000\n"
+"Last-Translator: Flous Flow\n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,help:ff_mrp_employee_productivity.field_ff_mrp_employee_production_line__production_state
+msgid ""
+" * Draft: The MO is not confirmed yet.\n"
+" * Confirmed: The MO is confirmed, the stock rules and the reordering of the components are trigerred.\n"
+" * In Progress: The production has started (on the MO or on the WO).\n"
+" * To Close: The production is done, the MO has to be closed.\n"
+" * Done: The MO is closed, the stock moves are posted. \n"
+" * Cancelled: The MO has been cancelled, can't be confirmed anymore."
+msgstr ""
+" * مسودة: لم يتم تأكيد أمر التصنيع بعد.\n"
+" * مؤكد: تم تأكيد أمر التصنيع وتشغيل قواعد المخزون وإعادة طلب المكونات.\n"
+" * قيد التنفيذ: بدأ الإنتاج على أمر التصنيع أو أمر العمل.\n"
+" * جاهز للإغلاق: انتهى الإنتاج ويجب إغلاق أمر التصنيع.\n"
+" * منتهٍ: تم إغلاق أمر التصنيع وترحيل حركات المخزون.\n"
+" * ملغى: تم إلغاء أمر التصنيع ولا يمكن تأكيده مرة أخرى."
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.actions.report,print_report_name:ff_mrp_employee_productivity.action_report_employee_production_statement
+msgid "'Employee Production - %s' % (object.employee_id.name or 'Employees')"
+msgstr "'إنتاج الموظف - %s' % (object.employee_id.name or 'الموظفون')"
+
+#. module: ff_mrp_employee_productivity
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.employee_production_statement
+msgid ""
+"<br/>\n"
+"                                    <strong>Date To:</strong>"
+msgstr ""
+"<br/>\n"
+"                                    <strong>إلى تاريخ:</strong>"
+
+#. module: ff_mrp_employee_productivity
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.employee_production_statement
+msgid ""
+"<br/>\n"
+"                                    <strong>Department:</strong>"
+msgstr ""
+"<br/>\n"
+"                                    <strong>القسم:</strong>"
+
+#. module: ff_mrp_employee_productivity
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.employee_production_statement
+msgid ""
+"<br/>\n"
+"                                    <strong>Print Date:</strong>"
+msgstr ""
+"<br/>\n"
+"                                    <strong>تاريخ الطباعة:</strong>"
+
+#. module: ff_mrp_employee_productivity
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.hr_employee_form_view_employee_productivity
+msgid "<span class=\"o_stat_text\">Production</span>"
+msgstr "<span class=\"o_stat_text\">الإنتاج</span>"
+
+#. module: ff_mrp_employee_productivity
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.employee_production_statement
+msgid "<strong>Date From:</strong>"
+msgstr "<strong>من تاريخ:</strong>"
+
+#. module: ff_mrp_employee_productivity
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.employee_production_statement
+msgid "<strong>Employee:</strong>"
+msgstr "<strong>الموظف:</strong>"
+
+#. module: ff_mrp_employee_productivity
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.employee_production_statement
+msgid "<strong>Manufacturing Orders:</strong>"
+msgstr "<strong>أوامر التصنيع:</strong>"
+
+#. module: ff_mrp_employee_productivity
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.view_employee_production_report_wizard_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields.selection,name:ff_mrp_employee_productivity.selection__mrp_production__employee_production_status__cancelled
+msgid "Cancelled"
+msgstr "ملغى"
+
+#. module: ff_mrp_employee_productivity
+#. odoo-python
+#: code:addons/ff_mrp_employee_productivity/models/employee_production_line.py:0
+msgid "Cancelled employee production allocations cannot be changed."
+msgstr "لا يمكن تغيير توزيعات إنتاج الموظفين في أمر ملغى."
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_ff_mrp_employee_production_line__company_id
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.view_employee_production_line_search
+msgid "Company"
+msgstr "الشركة"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields.selection,name:ff_mrp_employee_productivity.selection__mrp_production__employee_production_status__complete
+msgid "Complete"
+msgstr "مكتمل"
+
+#. module: ff_mrp_employee_productivity
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.view_employee_production_line_search
+msgid "Completed Production"
+msgstr "الإنتاج المكتمل"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_ff_mrp_employee_production_line__create_uid
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_ff_mrp_employee_production_report_wizard__create_uid
+msgid "Created by"
+msgstr "أنشأه"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_ff_mrp_employee_production_line__create_date
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_ff_mrp_employee_production_report_wizard__create_date
+msgid "Created on"
+msgstr "تاريخ الإنشاء"
+
+#. module: ff_mrp_employee_productivity
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.employee_production_statement
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_ff_mrp_employee_production_report_wizard__date_from
+msgid "Date From"
+msgstr "من تاريخ"
+
+#. module: ff_mrp_employee_productivity
+#. odoo-python
+#: code:addons/ff_mrp_employee_productivity/wizard/employee_production_report_wizard.py:0
+msgid "Date From cannot be later than Date To."
+msgstr "لا يمكن أن يكون تاريخ البداية بعد تاريخ النهاية."
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_ff_mrp_employee_production_report_wizard__date_to
+msgid "Date To"
+msgstr "إلى تاريخ"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_ff_mrp_employee_production_line__display_name
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_ff_mrp_employee_production_report_wizard__display_name
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_hr_employee__display_name
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_mrp_production__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_ff_mrp_employee_production_line__production_status
+msgid "Distribution Status"
+msgstr "حالة التوزيع"
+
+#. module: ff_mrp_employee_productivity
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.mrp_production_form_view_employee_productivity
+msgid "Distribution Summary"
+msgstr "ملخص التوزيع"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_mrp_production__employee_production_reportable
+msgid "Eligible for Employee Production Report"
+msgstr "مؤهل لتقرير إنتاج الموظفين"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_ff_mrp_employee_production_line__report_eligible
+msgid "Eligible for Report"
+msgstr "مؤهل للتقرير"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model,name:ff_mrp_employee_productivity.model_hr_employee
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_ff_mrp_employee_production_line__employee_id
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_ff_mrp_employee_production_report_wizard__employee_id
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.view_employee_production_line_search
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_mrp_workcenter__employee_costs_hour
+msgid "Employee Cost per Hour"
+msgstr "تكلفة الموظف لكل ساعة"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_ff_mrp_employee_workorder_session__production_line_id
+msgid "Production Allocation"
+msgstr "توزيع الإنتاج"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_mrp_workorder__employee_produced_quantity
+msgid "Employee Produced Quantity"
+msgstr "كمية إنتاج الموظفين"
+
+#. module: ff_mrp_employee_productivity
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.mrp_workorder_employee_session_form
+msgid "Start Work & Employee Session"
+msgstr "بدء العمل وجلسة الموظف"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.actions.act_window,name:ff_mrp_employee_productivity.action_employee_my_workorders
+#: model:ir.ui.menu,name:ff_mrp_employee_productivity.menu_employee_my_workorders
+msgid "My Work Orders"
+msgstr "أوامر التشغيل الخاصة بي"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.actions.act_window,name:ff_mrp_employee_productivity.action_employee_workorder_session
+#: model:ir.ui.menu,name:ff_mrp_employee_productivity.menu_employee_workorder_session
+msgid "Shop Floor"
+msgstr "أرضية المصنع"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.actions.act_window,name:ff_mrp_employee_productivity.action_employee_production_pending_approval
+#: model:ir.ui.menu,name:ff_mrp_employee_productivity.menu_employee_production_pending_approval
+msgid "Production Approval"
+msgstr "اعتماد الإنتاج"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.actions.act_window,name:ff_mrp_employee_productivity.action_production_incentive_rule
+#: model:ir.ui.menu,name:ff_mrp_employee_productivity.menu_production_incentive_rule
+msgid "Production Incentive Rules"
+msgstr "قواعد حوافز الإنتاج"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.actions.act_window,name:ff_mrp_employee_productivity.action_production_payroll_wizard
+#: model:ir.ui.menu,name:ff_mrp_employee_productivity.menu_production_payroll_wizard
+msgid "Send Production to Payroll"
+msgstr "إرسال الإنتاج إلى الرواتب"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_ff_mrp_production_payroll_wizard__rule_id
+msgid "Incentive Rule"
+msgstr "قاعدة الحافز"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model,name:ff_mrp_employee_productivity.model_ff_mrp_employee_workorder_session
+msgid "Employee Work Order Session"
+msgstr "جلسة عمل الموظف"
+
+#. module: ff_mrp_employee_productivity
+msgid "Employee Work Sessions"
+msgstr "جلسات عمل الموظفين"
+
+#. module: ff_mrp_employee_productivity
+msgid "Start"
+msgstr "بدء"
+
+#. module: ff_mrp_employee_productivity
+msgid "Stop"
+msgstr "إيقاف"
+
+#. module: ff_mrp_employee_productivity
+msgid "Running"
+msgstr "قيد التشغيل"
+
+#. module: ff_mrp_employee_productivity
+msgid "Stopped"
+msgstr "متوقفة"
+
+#. module: ff_mrp_employee_productivity
+msgid "Production Incentive Rule"
+msgstr "قاعدة حافز الإنتاج"
+
+#. module: ff_mrp_employee_productivity
+msgid "Calculation"
+msgstr "الحساب"
+
+#. module: ff_mrp_employee_productivity
+msgid "Scope"
+msgstr "النطاق"
+
+#. module: ff_mrp_employee_productivity
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: ff_mrp_employee_productivity
+#. odoo-python
+#: code:addons/ff_mrp_employee_productivity/models/employee_production_line.py:0
+msgid ""
+"Employee %(employee)s belongs to %(employee_company)s and cannot be assigned"
+" to a manufacturing order in %(production_company)s."
+msgstr ""
+"الموظف %(employee)s تابع لشركة %(employee_company)s ولا يمكن إسناده إلى أمر "
+"تصنيع تابع لشركة %(production_company)s."
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_mrp_production__employee_production_status
+msgid "Employee Distribution Status"
+msgstr "حالة توزيع الإنتاج على الموظفين"
+
+#. module: ff_mrp_employee_productivity
+#. odoo-python
+#: code:addons/ff_mrp_employee_productivity/models/hr_employee.py:0
+#: code:addons/ff_mrp_employee_productivity/wizard/employee_production_report_wizard.py:0
+#: model:ir.actions.act_window,name:ff_mrp_employee_productivity.action_employee_production_line
+#: model:ir.ui.menu,name:ff_mrp_employee_productivity.menu_employee_production_line
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.view_employee_production_line_form
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.view_employee_production_line_graph
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.view_employee_production_line_list
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.view_employee_production_line_pivot
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.view_employee_production_line_search
+msgid "Employee Production"
+msgstr "إنتاج الموظفين"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model,name:ff_mrp_employee_productivity.model_ff_mrp_employee_production_line
+msgid "Employee Production Allocation"
+msgstr "توزيع إنتاج الموظف"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.actions.report,name:ff_mrp_employee_productivity.action_report_employee_production_statement
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.employee_production_statement
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.view_employee_production_report_wizard_form
+msgid "Employee Production Statement"
+msgstr "كشف إنتاج الموظف"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model,name:ff_mrp_employee_productivity.model_ff_mrp_employee_production_report_wizard
+msgid "Employee Production Statement Wizard"
+msgstr "معالج كشف إنتاج الموظف"
+
+#. module: ff_mrp_employee_productivity
+#. odoo-python
+#: code:addons/ff_mrp_employee_productivity/models/employee_production_line.py:0
+msgid "Employee production allocation corrected by %(user)s for %(employee)s."
+msgstr "تم تصحيح توزيع إنتاج الموظف %(employee)s بواسطة %(user)s."
+
+#. module: ff_mrp_employee_productivity
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.mrp_production_form_view_employee_productivity
+msgid "Employee quantities are provisional until manufacturing is completed."
+msgstr "كميات الموظفين مؤقتة حتى يكتمل التصنيع."
+
+#. module: ff_mrp_employee_productivity
+#. odoo-python
+#: code:addons/ff_mrp_employee_productivity/models/mrp_production.py:0
+msgid "Employee quantities exceed production"
+msgstr "كميات الموظفين تتجاوز الإنتاج الفعلي"
+
+#. module: ff_mrp_employee_productivity
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.mrp_production_form_view_employee_productivity
+msgid ""
+"Employee quantities exceed the actual manufactured quantity.\n"
+"                        Correct the distribution before reporting."
+msgstr ""
+"كميات الموظفين تتجاوز الكمية المصنعة فعليًا.\n"
+"                        صحح التوزيع قبل إعداد التقرير."
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_ff_mrp_employee_production_report_wizard__employee_ids
+msgid "Employees"
+msgstr "الموظفون"
+
+#. module: ff_mrp_employee_productivity
+#. odoo-python
+#: code:addons/ff_mrp_employee_productivity/models/employee_production_line.py:0
+msgid ""
+"Finalized employee production allocations can only be corrected by a "
+"Manufacturing Manager."
+msgstr ""
+"لا يمكن تصحيح توزيعات إنتاج الموظفين المكتملة إلا بواسطة مدير التصنيع."
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_ff_mrp_employee_production_line__id
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_ff_mrp_employee_production_report_wizard__id
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_hr_employee__id
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_mrp_production__id
+msgid "ID"
+msgstr "المعرّف"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields.selection,name:ff_mrp_employee_productivity.selection__mrp_production__employee_production_status__in_progress
+msgid "In Progress"
+msgstr "قيد التنفيذ"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_ff_mrp_employee_production_line__write_uid
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_ff_mrp_employee_production_report_wizard__write_uid
+msgid "Last Updated by"
+msgstr "آخر تعديل بواسطة"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_ff_mrp_employee_production_line__write_date
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_ff_mrp_employee_production_report_wizard__write_date
+msgid "Last Updated on"
+msgstr "تاريخ آخر تعديل"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model,name:ff_mrp_employee_productivity.model_mrp_production
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_ff_mrp_employee_production_line__production_id
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.employee_production_statement
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.view_employee_production_line_search
+msgid "Manufacturing Order"
+msgstr "أمر التصنيع"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_ff_mrp_employee_production_line__production_state
+msgid "Manufacturing Status"
+msgstr "حالة التصنيع"
+
+#. module: ff_mrp_employee_productivity
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.view_employee_production_line_search
+msgid "Month"
+msgstr "الشهر"
+
+#. module: ff_mrp_employee_productivity
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.employee_production_statement
+msgid "No eligible production records."
+msgstr "لا توجد سجلات إنتاج مؤهلة."
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields.selection,name:ff_mrp_employee_productivity.selection__mrp_production__employee_production_status__draft
+msgid "Not Started"
+msgstr "لم يبدأ"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields.selection,name:ff_mrp_employee_productivity.selection__mrp_production__employee_production_status__over_assigned
+msgid "Over Assigned"
+msgstr "توزيع زائد"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_ff_mrp_employee_production_report_wizard__print_datetime
+msgid "Print Date"
+msgstr "تاريخ الطباعة"
+
+#. module: ff_mrp_employee_productivity
+#. odoo-python
+#: code:addons/ff_mrp_employee_productivity/models/hr_employee.py:0
+#: model:ir.actions.server,name:ff_mrp_employee_productivity.action_employee_production_statement_from_employees
+msgid "Print Employee Production Statements"
+msgstr "طباعة كشوف إنتاج الموظفين"
+
+#. module: ff_mrp_employee_productivity
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.view_employee_production_report_wizard_form
+msgid "Print PDF"
+msgstr "طباعة PDF"
+
+#. module: ff_mrp_employee_productivity
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.hr_employee_form_view_employee_productivity
+msgid "Print Production Statement"
+msgstr "طباعة كشف الإنتاج"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_ff_mrp_employee_production_line__quantity
+msgid "Produced Quantity"
+msgstr "الكمية المنتجة"
+
+#. module: ff_mrp_employee_productivity
+#. odoo-python
+#: code:addons/ff_mrp_employee_productivity/models/employee_production_line.py:0
+#: model:ir.model.constraint,message:ff_mrp_employee_productivity.constraint_ff_mrp_employee_production_line_quantity_positive
+msgid "Produced quantity must be greater than zero."
+msgstr "يجب أن تكون كمية الإنتاج أكبر من صفر."
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_ff_mrp_employee_production_line__product_id
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.employee_production_statement
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.view_employee_production_line_search
+msgid "Product"
+msgstr "المنتج"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_ff_mrp_employee_production_line__production_date
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.view_employee_production_line_search
+msgid "Production Date"
+msgstr "تاريخ الإنتاج"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_mrp_production__employee_production_line_ids
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.mrp_production_form_view_employee_productivity
+msgid "Production Employees"
+msgstr "موظفو الإنتاج"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_hr_employee__employee_production_count
+msgid "Production Entries"
+msgstr "سجلات الإنتاج"
+
+#. module: ff_mrp_employee_productivity
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.employee_production_statement
+msgid "Production Supervisor: ____________________"
+msgstr "مشرف الإنتاج: ____________________"
+
+#. module: ff_mrp_employee_productivity
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.employee_production_statement
+msgid "Quantity"
+msgstr "الكمية"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_mrp_production__employee_unassigned_qty
+msgid "Remaining Unassigned Quantity"
+msgstr "الكمية المتبقية غير الموزعة"
+
+#. module: ff_mrp_employee_productivity
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.employee_production_statement
+msgid "Reviewer: ____________________"
+msgstr "المراجع: ____________________"
+
+#. module: ff_mrp_employee_productivity
+#. odoo-python
+#: code:addons/ff_mrp_employee_productivity/wizard/employee_production_report_wizard.py:0
+msgid "Select at least one employee."
+msgstr "اختر موظفًا واحدًا على الأقل."
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_ff_mrp_employee_production_report_wizard__show_order_details
+msgid "Show Manufacturing Order Details"
+msgstr "إظهار تفاصيل أمر التصنيع"
+
+#. module: ff_mrp_employee_productivity
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.mrp_production_form_view_employee_productivity
+msgid "Status"
+msgstr "الحالة"
+
+#. module: ff_mrp_employee_productivity
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.employee_production_statement
+msgid "Summary"
+msgstr "الملخص"
+
+#. module: ff_mrp_employee_productivity
+#. odoo-python
+#: code:addons/ff_mrp_employee_productivity/models/mrp_production.py:0
+msgid ""
+"The assigned employee quantity is greater than the actual manufactured "
+"quantity. Correct the distribution before reporting."
+msgstr ""
+"كمية الموظفين الموزعة أكبر من الكمية المصنعة فعليًا. صحح التوزيع قبل إعداد "
+"التقرير."
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_mrp_production__employee_production_qty
+msgid "Total Assigned Employee Quantity"
+msgstr "إجمالي كمية الموظفين الموزعة"
+
+#. module: ff_mrp_employee_productivity
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.employee_production_statement
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.view_employee_production_line_list
+msgid "Total Quantity"
+msgstr "إجمالي الكمية"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields.selection,name:ff_mrp_employee_productivity.selection__mrp_production__employee_production_status__unassigned
+msgid "Unassigned Quantity"
+msgstr "كمية غير موزعة"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_ff_mrp_employee_production_line__product_uom_id
+msgid "Unit of Measure"
+msgstr "وحدة القياس"
+
+#. module: ff_mrp_employee_productivity
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.employee_production_statement
+msgid "UoM"
+msgstr "وحدة القياس"
+
+#. module: ff_mrp_employee_productivity
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.view_employee_production_line_form
+msgid "Validation"
+msgstr "التحقق"
+
+#. module: ff_mrp_employee_productivity
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.view_employee_production_report_wizard_form
+msgid "View Records"
+msgstr "عرض السجلات"
+
+#. module: ff_mrp_employee_productivity
+#. odoo-python
+#: code:addons/ff_mrp_employee_productivity/models/hr_employee.py:0
+msgid "You are not allowed to view employee production records."
+msgstr "ليس لديك صلاحية عرض سجلات إنتاج الموظفين."
+
+#. module: ff_mrp_employee_productivity
+#. odoo-python
+#: code:addons/ff_mrp_employee_productivity/models/hr_employee.py:0
+msgid "employee_id"
+msgstr "الموظف"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_mrp_production__employee_overassigned_qty
+msgid "Over-assigned Quantity"
+msgstr "الكمية الزائدة عن التوزيع"
+
+#. module: ff_mrp_employee_productivity
+#. odoo-python
+#: code:addons/ff_mrp_employee_productivity/models/mrp_workcenter.py:0
+msgid "Employees from another company cannot be assigned to work center %(workcenter)s: %(employees)s."
+msgstr "لا يمكن ربط موظفين من شركة أخرى بمركز العمل %(workcenter)s: %(employees)s."

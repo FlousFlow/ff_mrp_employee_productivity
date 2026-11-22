@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="rule_employee_production_line_company" model="ir.rule">
+        <field name="name">Employee production company isolation</field>
+        <field name="model_id" ref="model_ff_mrp_employee_production_line"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        <field name="groups" eval="[(4, ref('mrp.group_mrp_user')), (4, ref('hr.group_hr_user'))]"/>
+    </record>
+
+    <record id="rule_employee_production_wizard_company" model="ir.rule">
+        <field name="name">Employee production wizard company isolation</field>
+        <field name="model_id" ref="model_ff_mrp_employee_production_report_wizard"/>
+        <field name="domain_force">['|', ('employee_id.company_id', '=', False), ('employee_id.company_id', 'in', company_ids)]</field>
+        <field name="groups" eval="[(4, ref('mrp.group_mrp_user')), (4, ref('hr.group_hr_user'))]"/>
+    </record>
+
+    <record id="rule_employee_workorder_session_company" model="ir.rule">
+        <field name="name">Employee work-order session company isolation</field>
+        <field name="model_id" ref="model_ff_mrp_employee_workorder_session"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        <field name="groups" eval="[(4, ref('mrp.group_mrp_user')), (4, ref('hr.group_hr_user'))]"/>
+    </record>
+
+    <record id="rule_production_incentive_rule_company" model="ir.rule">
+        <field name="name">Production incentive rule company isolation</field>
+        <field name="model_id" ref="model_ff_mrp_production_incentive_rule"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        <field name="groups" eval="[(4, ref('mrp.group_mrp_user')), (4, ref('hr.group_hr_user'))]"/>
+    </record>
+</odoo>

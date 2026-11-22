@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_employee_workorder_session_list" model="ir.ui.view">
+        <field name="name">ff.mrp.employee.workorder.session.list</field>
+        <field name="model">ff.mrp.employee.workorder.session</field>
+        <field name="arch" type="xml"><list string="Employee Work Sessions"><field name="employee_id"/><field name="workorder_id"/><field name="workcenter_id"/><field name="started_at"/><field name="ended_at"/><field name="produced_quantity" sum="Total Quantity"/><field name="duration_hours" sum="Total Hours"/><field name="hourly_cost"/><field name="cost_amount" sum="Total Cost"/><field name="production_line_id"/><field name="state"/></list></field>
+    </record>
+    <record id="view_employee_workorder_session_kanban" model="ir.ui.view">
+        <field name="name">ff.mrp.employee.workorder.session.kanban</field>
+        <field name="model">ff.mrp.employee.workorder.session</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="workcenter_id" class="o_kanban_mobile">
+                <field name="employee_id"/><field name="workorder_id"/><field name="workcenter_id"/>
+                <field name="state"/><field name="duration_hours"/><field name="cost_amount"/>
+                <templates><t t-name="card">
+                    <div class="o_kanban_record">
+                        <strong><field name="employee_id"/></strong>
+                        <div><field name="workorder_id"/></div>
+                        <div><field name="produced_quantity"/> produced</div>
+                        <div><field name="duration_hours"/> hours</div>
+                        <div class="mt-2"><field name="state" widget="badge"/></div>
+                        <footer><button name="action_stop" type="object" string="Stop" class="btn btn-primary" invisible="state != 'running'"/></footer>
+                    </div>
+                </t></templates>
+            </kanban>
+        </field>
+    </record>
+    <record id="view_employee_workorder_session_form" model="ir.ui.view">
+        <field name="name">ff.mrp.employee.workorder.session.form</field>
+        <field name="model">ff.mrp.employee.workorder.session</field>
+        <field name="arch" type="xml"><form string="Employee Work Session"><header><button name="action_stop" type="object" string="Stop" class="btn-primary" invisible="state != 'running'"/><button name="action_cancel" type="object" string="Cancel" invisible="state != 'running'"/><field name="state" widget="statusbar" statusbar_visible="running,stopped"/></header><sheet><group><field name="employee_id"/><field name="workorder_id"/><field name="workcenter_id" readonly="1"/><field name="production_id" readonly="1"/><field name="produced_quantity" readonly="state != 'running'"/></group><group><field name="started_at"/><field name="ended_at"/><field name="duration_hours" readonly="1"/><field name="hourly_cost" readonly="1"/><field name="cost_amount" readonly="1"/><field name="production_line_id" readonly="1"/></group></sheet></form></field>
+    </record>
+    <record id="action_employee_workorder_session" model="ir.actions.act_window">
+        <field name="name">Employee Work Sessions</field>
+        <field name="res_model">ff.mrp.employee.workorder.session</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="view_id" ref="view_employee_workorder_session_kanban"/>
+        <field name="domain">[('state', '!=', 'cancelled')]</field>
+    </record>
+    <menuitem id="menu_employee_workorder_session" name="Employee Work Sessions" parent="mrp.menu_mrp_reporting" action="action_employee_workorder_session" groups="mrp.group_mrp_user,hr.group_hr_user" sequence="32"/>
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_production_incentive_rule_list" model="ir.ui.view">
+        <field name="name">ff.mrp.production.incentive.rule.list</field>
+        <field name="model">ff.mrp.production.incentive.rule</field>
+        <field name="arch" type="xml"><list string="Production Incentive Rules"><field name="sequence" widget="handle"/><field name="name"/><field name="calculation_mode"/><field name="rate_per_unit"/><field name="target_quantity"/><field name="input_type_id"/><field name="active"/></list></field>
+    </record>
+    <record id="view_production_incentive_rule_form" model="ir.ui.view">
+        <field name="name">ff.mrp.production.incentive.rule.form</field>
+        <field name="model">ff.mrp.production.incentive.rule</field>
+        <field name="arch" type="xml"><form string="Production Incentive Rule"><sheet><group><field name="name"/><field name="active"/><field name="sequence"/><field name="company_id"/><field name="input_type_id"/></group><group string="Calculation"><field name="calculation_mode"/><field name="target_quantity" invisible="calculation_mode != 'target_variance'"/><field name="rate_per_unit"/><field name="max_amount"/></group><notebook><page string="Scope"><field name="employee_ids" widget="many2many_tags"/><field name="workcenter_ids" widget="many2many_tags"/><field name="product_ids" widget="many2many_tags"/></page><page string="Notes"><field name="note"/></page></notebook></sheet></form></field>
+    </record>
+    <record id="action_production_incentive_rule" model="ir.actions.act_window"><field name="name">Production Incentive Rules</field><field name="res_model">ff.mrp.production.incentive.rule</field><field name="view_mode">list,form</field></record>
+    <menuitem id="menu_production_incentive_rule" name="Production Incentive Rules" parent="mrp.menu_mrp_reporting" action="action_production_incentive_rule" groups="mrp.group_mrp_user" sequence="33"/>
+</odoo>

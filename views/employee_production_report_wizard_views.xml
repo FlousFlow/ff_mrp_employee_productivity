@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_employee_production_report_wizard_form" model="ir.ui.view">
+        <field name="name">ff.mrp.employee.production.report.wizard.form</field>
+        <field name="model">ff.mrp.employee.production.report.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Employee Production Statement">
+                <group>
+                    <field name="employee_id" invisible="not employee_id"/>
+                    <field name="employee_ids" widget="many2many_tags"
+                           invisible="employee_id" required="not employee_id"/>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                    <field name="show_order_details"/>
+                </group>
+                <footer>
+                    <button name="action_print" type="object" string="Print PDF" class="btn-primary"/>
+                    <button name="action_view_records" type="object" string="View Records"/>
+                    <button string="Cancel" class="btn-link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>
