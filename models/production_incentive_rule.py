@@ -8,22 +8,48 @@ class FfMrpProductionIncentiveRule(models.Model):
     _order = 'sequence, name'
     _check_company_auto = True
 
-    name = fields.Char(required=True)
-    active = fields.Boolean(default=True)
-    sequence = fields.Integer(default=10)
-    company_id = fields.Many2one('res.company', required=True, default=lambda self: self.env.company)
-    employee_ids = fields.Many2many('hr.employee', string='Employees')
-    workcenter_ids = fields.Many2many('mrp.workcenter', string='Work Centers')
-    product_ids = fields.Many2many('product.product', string='Products')
-    input_type_id = fields.Many2one('hr.payslip.input.type', required=True, string='Payroll Input Type')
+    name = fields.Char(required=True, string='Rule Name')
+    active = fields.Boolean(default=True, string='Active')
+    sequence = fields.Integer(default=10, string='Sequence')
+    company_id = fields.Many2one('res.company', required=True, default=lambda self: self.env.company, string='Company')
+    employee_ids = fields.Many2many(
+        'hr.employee', string='Employees',
+        help='Leave empty to apply to every employee in the selected company.',
+    )
+    workcenter_ids = fields.Many2many(
+        'mrp.workcenter', string='Work Centers',
+        help='Leave empty to apply to production from every work center.',
+    )
+    product_ids = fields.Many2many(
+        'product.product', string='Products',
+        help='Leave empty to apply to every product.',
+    )
+    input_type_id = fields.Many2one(
+        'hr.payslip.input.type', required=True, string='Payroll Input Type',
+        help='The payslip input type that receives this rule amount.',
+    )
     calculation_mode = fields.Selection([
         ('per_unit', 'Amount per approved unit'),
         ('target_variance', 'Amount per unit above/below target'),
-    ], default='per_unit', required=True)
-    target_quantity = fields.Float(string='Monthly Target Quantity')
-    rate_per_unit = fields.Float(string='Amount per Unit', required=True, digits='Product Price')
-    max_amount = fields.Float(string='Maximum Adjustment', help='Optional absolute cap. Leave zero for no cap.', digits='Product Price')
-    note = fields.Text()
+    ], default='per_unit', required=True, help=(
+        'Amount per approved unit pays the rate for every approved unit. '
+        'Amount per unit above/below target applies the rate to the difference '
+        'between approved quantity and the monthly target.'
+    ))
+    target_quantity = fields.Float(
+        string='Monthly Target Quantity',
+        help='Monthly target used only with the above/below target calculation mode.',
+    )
+    rate_per_unit = fields.Float(
+        string='Amount per Unit', required=True, digits='Product Price',
+        help='Adjustment amount for each approved unit. A negative value reduces the payslip amount.',
+    )
+    max_amount = fields.Float(
+        string='Maximum Adjustment',
+        help='Optional absolute cap for the adjustment. Leave zero for no cap.',
+        digits='Product Price',
+    )
+    note = fields.Text(string='Notes')
 
     @api.constrains('target_quantity', 'max_amount')
     def _check_non_negative(self):

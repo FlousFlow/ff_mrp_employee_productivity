@@ -1,6 +1,6 @@
 {
     'name': 'Flous Flow Employee Production Tracking',
-    'version': '19.0.2.0.17',
+    'version': '19.0.2.0.18',
     'category': 'Manufacturing/Reporting',
     'summary': 'Track manufactured quantities by employee on manufacturing orders.',
     'description': """

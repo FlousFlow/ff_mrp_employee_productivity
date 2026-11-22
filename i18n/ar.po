@@ -590,3 +590,113 @@ msgstr "الكمية الزائدة عن التوزيع"
 #: code:addons/ff_mrp_employee_productivity/models/mrp_workcenter.py:0
 msgid "Employees from another company cannot be assigned to work center %(workcenter)s: %(employees)s."
 msgstr "لا يمكن ربط موظفين من شركة أخرى بمركز العمل %(workcenter)s: %(employees)s."
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_ff_mrp_production_incentive_rule__name
+msgid "Rule Name"
+msgstr "اسم القاعدة"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_ff_mrp_production_incentive_rule__active
+msgid "Active"
+msgstr "نشطة"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_ff_mrp_production_incentive_rule__sequence
+msgid "Sequence"
+msgstr "الترتيب"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_ff_mrp_production_incentive_rule__workcenter_ids
+msgid "Work Centers"
+msgstr "مراكز العمل"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_ff_mrp_production_incentive_rule__product_ids
+msgid "Products"
+msgstr "المنتجات"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_ff_mrp_production_incentive_rule__input_type_id
+msgid "Payroll Input Type"
+msgstr "نوع إدخال الراتب"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_ff_mrp_production_incentive_rule__calculation_mode
+msgid "Calculation Mode"
+msgstr "طريقة الحساب"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields.selection,name:ff_mrp_employee_productivity.selection__ff_mrp_production_incentive_rule__calculation_mode__per_unit
+msgid "Amount per approved unit"
+msgstr "مبلغ لكل وحدة معتمدة"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields.selection,name:ff_mrp_employee_productivity.selection__ff_mrp_production_incentive_rule__calculation_mode__target_variance
+msgid "Amount per unit above/below target"
+msgstr "مبلغ لكل وحدة أعلى أو أقل من المستهدف"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_ff_mrp_production_incentive_rule__target_quantity
+msgid "Monthly Target Quantity"
+msgstr "الكمية المستهدفة شهريًا"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_ff_mrp_production_incentive_rule__rate_per_unit
+msgid "Amount per Unit"
+msgstr "المبلغ لكل وحدة"
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,field_description:ff_mrp_employee_productivity.field_ff_mrp_production_incentive_rule__max_amount
+msgid "Maximum Adjustment"
+msgstr "الحد الأقصى للتعديل"
+
+#. module: ff_mrp_employee_productivity
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.view_production_incentive_rule_form
+msgid "How this rule applies:"
+msgstr "طريقة تطبيق القاعدة:"
+
+#. module: ff_mrp_employee_productivity
+#: model_terms:ir.ui.view,arch_db:ff_mrp_employee_productivity.view_production_incentive_rule_form
+msgid "leave all scope fields empty to apply the rule to all approved production in the company. When you select employees, work centers, or products, the production must match the selected values."
+msgstr "اترك كل حقول النطاق فارغة لتطبيق القاعدة على كل الإنتاج المعتمد داخل الشركة. عند اختيار موظفين أو مراكز عمل أو منتجات، يجب أن يطابق الإنتاج القيم المحددة."
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,help:ff_mrp_employee_productivity.field_ff_mrp_production_incentive_rule__employee_ids
+msgid "Leave empty to apply to every employee in the selected company."
+msgstr "اتركه فارغًا لتطبيق القاعدة على كل موظفي الشركة المحددة."
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,help:ff_mrp_employee_productivity.field_ff_mrp_production_incentive_rule__workcenter_ids
+msgid "Leave empty to apply to production from every work center."
+msgstr "اتركه فارغًا لتطبيق القاعدة على إنتاج كل مراكز العمل."
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,help:ff_mrp_employee_productivity.field_ff_mrp_production_incentive_rule__product_ids
+msgid "Leave empty to apply to every product."
+msgstr "اتركه فارغًا لتطبيق القاعدة على كل المنتجات."
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,help:ff_mrp_employee_productivity.field_ff_mrp_production_incentive_rule__input_type_id
+msgid "The payslip input type that receives this rule amount."
+msgstr "نوع إدخال قسيمة الراتب الذي سيستقبل قيمة هذه القاعدة."
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,help:ff_mrp_employee_productivity.field_ff_mrp_production_incentive_rule__target_quantity
+msgid "Monthly target used only with the above/below target calculation mode."
+msgstr "المستهدف الشهري المستخدم فقط مع طريقة حساب الفرق عن المستهدف."
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,help:ff_mrp_employee_productivity.field_ff_mrp_production_incentive_rule__rate_per_unit
+msgid "Adjustment amount for each approved unit. A negative value reduces the payslip amount."
+msgstr "قيمة التعديل لكل وحدة معتمدة. القيمة السالبة تقلل مبلغ قسيمة الراتب."
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,help:ff_mrp_employee_productivity.field_ff_mrp_production_incentive_rule__max_amount
+msgid "Optional absolute cap for the adjustment. Leave zero for no cap."
+msgstr "حد أقصى اختياري لقيمة التعديل. اتركه صفرًا بدون حد أقصى."
+
+#. module: ff_mrp_employee_productivity
+#: model:ir.model.fields,help:ff_mrp_employee_productivity.field_ff_mrp_production_incentive_rule__calculation_mode
+msgid "Amount per approved unit pays the rate for every approved unit. Amount per unit above/below target applies the rate to the difference between approved quantity and the monthly target."
+msgstr "مبلغ لكل وحدة معتمدة يحسب القيمة لكل وحدة. أما مبلغ لكل وحدة أعلى أو أقل من المستهدف فيطبق القيمة على الفرق بين الكمية المعتمدة والمستهدف الشهري."
