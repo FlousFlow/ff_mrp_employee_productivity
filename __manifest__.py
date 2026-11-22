@@ -13,7 +13,8 @@ report approved completed production by employee, product and date.
     'images': [
         'static/description/icon.png',
     ],
-    'depends': ['mrp', 'hr'],
+    # Payroll integration uses the Flous Flow payslip/input models.
+    'depends': ['mrp', 'hr', 'ff_hr_payroll'],
     'data': [
         'security/security.xml',
         'security/ir.model.access.csv',
