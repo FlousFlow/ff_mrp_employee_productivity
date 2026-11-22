@@ -11,7 +11,7 @@ report approved completed production by employee, product and date.
     'website': 'https://flousflow.com',
     'license': 'LGPL-3',
     'images': [
-        'static/description/icon.png',
+        'static/description/images/employee_production_screenshot.png',
     ],
     # Payroll integration uses the Flous Flow payslip/input models.
     'depends': ['mrp', 'hr', 'ff_hr_payroll'],
