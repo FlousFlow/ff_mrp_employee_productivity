@@ -16,8 +16,14 @@ class TestEmployeeProduction(TransactionCase):
             [('company_id', '=', cls.company.id)], limit=1)
         cls.product = cls.env['product.product'].search(
             [('company_id', 'in', [False, cls.company.id]), ('is_storable', '=', True)], limit=1)
-        if not cls.employee or not cls.product:
-            raise unittest.SkipTest('The test database has no employee and storable product fixture.')
+        cls.bom = cls.env['mrp.bom'].search([
+            ('company_id', 'in', [False, cls.company.id]),
+            ('active', '=', True),
+        ], limit=1)
+        if cls.bom:
+            cls.product = cls.bom.product_id or cls.bom.product_tmpl_id.product_variant_id
+        if not cls.employee or not cls.product or not cls.bom:
+            raise unittest.SkipTest('The test database has no employee, BOM and storable product fixture.')
         warehouse = cls.env['stock.warehouse'].search(
             [('company_id', '=', cls.company.id)], limit=1)
         if not warehouse:
@@ -32,7 +38,9 @@ class TestEmployeeProduction(TransactionCase):
             'product_uom_id': cls.product.uom_id.id,
             'picking_type_id': warehouse.manu_type_id.id,
             'company_id': cls.company.id,
+            'bom_id': cls.bom.id,
         })
+        cls.production.action_confirm()
         cls.workorder = cls.production.workorder_ids[:1]
         if not cls.workorder:
             raise unittest.SkipTest('The test product has no work order fixture.')
