@@ -10,6 +10,9 @@ report approved completed production by employee, product and date.
     'author': 'Flous Flow',
     'website': 'https://flousflow.com',
     'license': 'LGPL-3',
+    'images': [
+        'static/description/icon.png',
+    ],
     'depends': ['mrp', 'hr'],
     'data': [
         'security/security.xml',
