@@ -1,4 +1,5 @@
 from datetime import date
+import unittest
 
 from psycopg2 import errors
 from odoo import fields
@@ -16,7 +17,7 @@ class TestEmployeeProduction(TransactionCase):
         cls.product = cls.env['product.product'].search(
             [('company_id', 'in', [False, cls.company.id]), ('is_storable', '=', True)], limit=1)
         if not cls.employee or not cls.product:
-            raise cls.skipTest('The test database has no employee and storable product fixture.')
+            raise unittest.SkipTest('The test database has no employee and storable product fixture.')
         warehouse = cls.env['stock.warehouse'].search(
             [('company_id', '=', cls.company.id)], limit=1)
         if not warehouse:
@@ -34,7 +35,7 @@ class TestEmployeeProduction(TransactionCase):
         })
         cls.workorder = cls.production.workorder_ids[:1]
         if not cls.workorder:
-            raise cls.skipTest('The test product has no work order fixture.')
+            raise unittest.SkipTest('The test product has no work order fixture.')
         cls.workorder.workcenter_id.employee_ids = [(4, cls.employee.id)]
 
     def test_positive_allocation_and_copy_isolated(self):
